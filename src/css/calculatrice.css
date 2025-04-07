@@ -1,0 +1,9 @@
+#calculatrice
+  {/* margin-top: 1%; *//* border-radius: 38px; *//* size: ledger; */}
+.custom-margin {
+  @apply mt-20;
+}
+
+.modal-box{
+  box-shadow: 0px 0px 19px 0px #eae7e7;
+}
