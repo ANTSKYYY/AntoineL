@@ -1,5 +1,5 @@
 # Projet Developpement Web 
-![badge-html](https://badgewind.vercel.app/api/Tailwind-a4.0.17?icon=simple-icons:github)
+![badge-html](https://badgewind.vercel.app/api/Project-Tailwind?badgeStyle=p-0|rounded-full&leftStyle=rounded-l-full|mr-0&rightStyle=rounded-r-full|bg-purple-800|text-white&icon=feather:code&iconStyle=text-white|bg-purple-800|rounded-full)
 
 ## Description
 Ce projet en développement Web, site présentant une passion avec une Calculatrice et Un questionnaire muni d'un bouton Brute force
