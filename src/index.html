@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth ">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,9 @@
     <script src="./js/calculatrice.js"></script>
     <script src="./js/questionnaire.js"></script>
 </head>
-<body>
+<body class="">
     <div class="bg-white">
+
         <header class="absolute inset-x-0 top-0 z-50">
           <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
@@ -31,7 +32,7 @@
               </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-              <a href="#scroll-container" class="text-sm/6 font-semibold text-gray-900">Equipes</a>
+
               <a href="#classement1" class="text-sm/6 font-semibold text-gray-900">Classement</a>
               <a href="#contact" class="text-sm/6 font-semibold text-gray-900">Contact</a>
               <label for="my_modal_7" class="cursor-pointer text-sm/6 font-semibold text-gray-900 bg-transparent border-none p-0">Calculatrice</label>
@@ -39,35 +40,41 @@
           
           </nav>
           <!-- Mobile menu, show/hide based on menu open state. -->
-          <div class="lg:hidden" role="dialog" aria-modal="true">
-            <!-- Background backdrop, show/hide based on slide-over state. -->
-            <div class="fixed inset-0 z-50"></div>
-            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-              <div class="flex items-center justify-between">
-                <a href="#" class="-m-1.5 p-1.5">
-                  <span class="sr-only">Your Company</span>
-                  <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
-                </a>
-                <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                  <span class="sr-only">Close menu</span>
-                  <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-gray-500/10">
-                  <div class="space-y-2 py-6">
-                    <a href="#scroll-container" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Equipes</a>
-                    <a href="#classement1" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Classement</a>
-                    <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Calculatrice</a>
-                  </div>
-                  
-                </div>
+          <!-- Bouton d'ouverture (à placer quelque part visible sur mobile) -->
+<button id="openMenu" class="p-2 text-gray-700 sm:hidden">
+  <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+
+        <!-- MENU SLIDE -->
+        <div id="mobileMenu"
+          class="fixed inset-y-0 right-0 z-50 w-full max-w-sm overflow-y-auto bg-white px-6 py-6 transform translate-x-full transition-transform duration-300 ease-in-out sm:ring-1 sm:ring-gray-900/10">
+          
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&amp;shade=600" alt="">
+            </a>
+            <button id="closeMenu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="#classement1" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Classement</a>
+                <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Calculatrice</a>
               </div>
             </div>
           </div>
+        </div>
+
         </header>
       
         <div class="relative isolate px-6 pt-14 lg:px-8">
@@ -121,15 +128,17 @@
           <!-- Les équipes seront insérées ici -->
       </div>
 
+      <!-- Les Equipes -->
+     
 
 
      
 
 
     <!-- Formulaire de Contact -->
-    <div class="flex flex-col isolate bg-white h-screen w-screen items-center" id="contact">
+    <div class="flex flex-col isolate h-screen w-screen items-center bg-white" id="contact">
       <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-700 sm:text-6xl text-center mt-16">Me contacter</h1>
-      <h2 class="text-2xl text-gray-500 mt-2 mb-8 w-150 text-center">Pour pouvoir me contacter, vous devez prouver votre passion pour le football en répondant à ce questionnaire</h2>
+      <h2 class="text-2xl text-gray-700 mt-2 mb-8 w-150 text-center">Pour pouvoir me contacter, vous devez prouver votre passion pour le football en répondant à ce questionnaire</h2>
       <div id="divquest" class="flex flex-col bg-white p-6 rounded-lg shadow-lg max-w-md w-full mt-12">
         <h1 class="text-2xl font-bold mb-4 text-center text-gray-700">Questionnaire</h1>
         <div id="question" class="text-xl font-bold mb-4 text-center text-gray-700">Quel est la capitale de la France ?</div>
@@ -150,7 +159,7 @@
     </div>
    
    
-
+  <!-- Calculatrice -->
     <input type="checkbox" id="my_modal_7" class="modal-toggle" />
     <div class="modal backdrop-blur-sm" role="dialog">
       <div class="modal-box flex p-0 w-auto h-auto">
@@ -185,9 +194,38 @@
       
       <label class="modal-backdrop" for="my_modal_7">Close</label>
     </div>
- <!-- Calculatrice -->
-    
 
+    
+    <script>
+      const carousel = document.getElementById("carousel");
+      const buttons = document.querySelectorAll("button[data-index]");
+    
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const index = parseInt(btn.dataset.index);
+          const itemWidth = carousel.clientWidth;
+          carousel.scrollTo({
+            left: index * itemWidth,
+            behavior: "smooth"
+          });
+        });
+      });
+
+      const openBtn = document.getElementById('openMenu');
+      const closeBtn = document.getElementById('closeMenu');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      openBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('translate-x-full');
+      });
+    </script>
+    
     
   
 </body>
