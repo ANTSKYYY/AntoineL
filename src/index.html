@@ -19,33 +19,27 @@
           <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
               <a href="https://www.psg.fr" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
+                <span class="sr-only">PSG</span>
                 <img class="h-8 w-auto" src="static/img/logo.png" alt="">
               </a>
             </div>
-            <div class="flex lg:hidden">
-              <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Open main menu</span>
-                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-              </button>
-            </div>
-            <div class="hidden lg:flex lg:gap-x-12">
+           
+            <div class="hidden md:flex md:gap-x-12">
 
               <a href="#classement1" class="text-sm/6 font-semibold text-gray-900">Classement</a>
               <a href="#contact" class="text-sm/6 font-semibold text-gray-900">Contact</a>
               <label for="my_modal_7" class="cursor-pointer text-sm/6 font-semibold text-gray-900 bg-transparent border-none p-0">Calculatrice</label>
             </div>
+            <button id="openMenu" class="p-2 text-gray-700 md:hidden md:flex">
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           
           </nav>
           <!-- Mobile menu, show/hide based on menu open state. -->
           <!-- Bouton d'ouverture (à placer quelque part visible sur mobile) -->
-<button id="openMenu" class="p-2 text-gray-700 sm:hidden">
-  <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-</button>
+
 
         <!-- MENU SLIDE -->
         <div id="mobileMenu"
@@ -53,10 +47,10 @@
           
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Psg</span>
+              <span class="sr-only">PSG</span>
               <img class="h-8 w-auto" src="./static/img/logo.png" alt="">
             </a>
-            <button id="closeMenu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <button id="closeMenu" type="button" class="cursor-pointer -m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close menu</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
@@ -69,7 +63,7 @@
               <div class="space-y-2 py-6">
                 <a href="#classement1" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Classement</a>
                 <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Calculatrice</a>
+                <label for="my_modal_7" class="-mx-3 block rounded-lg px-3 py-2 text-base cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Calculatrice</label>
               </div>
             </div>
           </div>
@@ -224,6 +218,25 @@
         mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
       });
+
+
+      // Ferme le menu quand un lien du menu mobile est cliqué
+      document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+        });
+      });
+      // Ferme le menu si on clique sur le label de la calculatrice dans le menu mobile
+      const calcLabel = document.querySelector('#mobileMenu label[for="my_modal_7"]');
+
+      if (calcLabel) {
+        calcLabel.addEventListener('click', () => {
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+        });
+      }
+
     </script>
     
     
